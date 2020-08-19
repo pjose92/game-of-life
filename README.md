@@ -11,6 +11,6 @@ Any dead cell with exactly three live neighbors becomes a live cell, as if by re
 The Game Controls
 
 Start/Stop Button: start or stop the game simulation
-Next Button: advance to a new generation of cells
+Next Button: advance to a new generation of cells ?
 Clear Button: clear out the grid and set generation back to 0
-Speed Slider: control speed from 0.1 to 3 seconds
+Speed Slider: control speed from 0.1 to 3 seconds ?
