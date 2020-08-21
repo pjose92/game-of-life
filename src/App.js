@@ -1,6 +1,7 @@
 import React from 'react';
 
 import About from './components/About'
+import Dash from './components/Dash'
 
 import styled from "styled-components"
 
@@ -16,11 +17,18 @@ const Title = styled.h1`
   color: white;
 `;
 
+const Container = styled.div`
+  margin: 0 auto;
+`;
+
 function App() {
   return (
     <AppContainer>
         <Title>The Game of Life</Title>
-        <About />
+        <Container>
+          <Dash />
+          <About />
+        </Container>
     </AppContainer>
   );
 }

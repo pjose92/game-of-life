@@ -2,6 +2,12 @@ import React, {useState} from "react";
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
 import styled from 'styled-components'
 
+const AboutDiv = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2rem;
+`
+
 const About = () => {
 
     const [isOpen1, setIsOpen1] = useState(false);
@@ -14,7 +20,7 @@ const About = () => {
     const toggle3 = () => setIsOpen3(!isOpen3);
 
     return (
-        <div> 
+        <AboutDiv> 
             <div>
                 <Button onClick={toggle1}>
                     The Game
@@ -63,7 +69,7 @@ const About = () => {
                 </Modal>
             </div>
             
-        </div>
+        </AboutDiv>
     )
 }
 export default About;
