@@ -1,37 +1,37 @@
 import React from 'react';
-import styled from 'styled-components'
+import Box from "../utils/useBox"
+// import styled from 'styled-components'
 
-const GridDiv = styled.div`
-    display: grid;
-    background: white;
-    max-width: 600px;
-    margin: 0 auto;
-`
+class Grid extends React.Component{
+    render() {
+        const width = (this.props.cols * 16)+1;
+        let rowArr = [];
 
-const CellDiv = styled.div`
-    width: 12px;
-    height: 12px;
-    border: solid 1px black;
-`
+        let boxClass = "";
+        
+        for (let i = 0; i < this.props.rows; i++) {
+            for (let j = 0; j < this.props.cols; j++){
+                let boxId = i + "_" + j;
 
-function Grid(props) {
-    const { grid, clickCell } = props;
-
-    return (
-        <GridDiv style={{ gridTemplateColumns: `repeat(${grid[0].length}, 12px)` }}>
-            {grid.map((rows, rowId) =>
-            rows.map((col, colId) => (
-                <CellDiv
-                    key={`${rowId}-${colId}`}
-                    onClick={() => clickCell(rowId, colId)}
-                    style={{
-                        backgroundColor: grid[rowId][colId] ? "yellow" : undefined,
-                    }}
-                />
-            ))
-            )}
-        </GridDiv>
-    )
+                boxClass = this.props.gridFull[i][j] ? "box on" : "box off";
+                rowArr.push(
+                    <Box
+                        boxClass={boxClass}
+                        key={boxId}
+                        boxId={boxId}
+                        row={i}
+                        col={j}
+                        selectBox={this.props.selectBox}
+                    />
+                )
+            }
+        }
+        return (
+            <div className="grid" style={{width: width}}>
+                {rowArr}
+            </div>
+        )
+    }
 }
 
 export default Grid;

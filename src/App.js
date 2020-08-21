@@ -1,7 +1,7 @@
 import React from 'react';
 
 import About from './components/About'
-import Dash from './components/Dash'
+import Grid from "./components/Grid"
 
 import styled from "styled-components"
 
@@ -26,8 +26,8 @@ function App() {
     <AppContainer>
         <Title>The Game of Life</Title>
         <Container>
-          <Dash />
           <About />
+          <Grid/>
         </Container>
     </AppContainer>
   );
