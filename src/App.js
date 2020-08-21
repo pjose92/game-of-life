@@ -1,12 +1,12 @@
 import React from 'react';
 
 import About from './components/About'
-import Grid from "./components/Grid"
+import Game from './components/Game'
 
 import styled from "styled-components"
 
 const AppContainer = styled.div`
-  background: black;
+  background: white;
 `
 
 const Title = styled.h1`
@@ -14,21 +14,18 @@ const Title = styled.h1`
   text-align: center;
   height: 5rem;
   padding-top: 1.5rem;
-  color: white;
+  color: black;
 `;
 
-const Container = styled.div`
-  margin: 0 auto;
-`;
 
 function App() {
   return (
     <AppContainer>
         <Title>The Game of Life</Title>
-        <Container>
           <About />
-          <Grid/>
-        </Container>
+          <div>
+            <Game/> 
+          </div>
     </AppContainer>
   );
 }

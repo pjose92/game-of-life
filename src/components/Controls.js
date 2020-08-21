@@ -1,6 +1,5 @@
 import React from "react";
-import styled from "styled-components";
-import { Button, Dropdown } from "reactstrap";
+import { Dropdown, DropdownButton } from "react-bootstrap";
 
 // const ControlDiv = styled.div`
 //   width: 100%;
@@ -84,4 +83,4 @@ class Buttons extends React.Component{
   }
 }
 
-export default Controls;
+export default Buttons;
