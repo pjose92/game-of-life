@@ -10,8 +10,8 @@ class Game extends React.Component {
     constructor() {
         super();
         this.speed = 100;
-        this.rows = 25;
-        this.cols = 40;
+        this.rows = 35;
+        this.cols = 50;
         this.state = {
             generation: 0,
             gridFull: Array(this.rows).fill().map(() => Array(this.cols).fill(false))
@@ -27,7 +27,7 @@ class Game extends React.Component {
     }
     seed = () => {
         let gridCop = arrayClone(this.state.gridFull);
-        for (let i = 0; i< this.rows; i++){
+        for (let i = 0; i < this.rows; i++){
             for (let j = 0; j < this.cols; j++){
                 if(!gridCop[i][j]){
                     if ( Math.floor(Math.random() * 3) === 1){
@@ -67,7 +67,7 @@ class Game extends React.Component {
 
     clear = () => {
         let grid = Array(this.rows).fill().map(() => Array(this.cols).fill(false));
-        this.state({
+        this.setState({
             gridFull: grid,
             generation: 0
         })

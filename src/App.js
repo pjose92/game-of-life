@@ -23,9 +23,7 @@ function App() {
     <AppContainer>
         <Title>The Game of Life</Title>
           <About />
-          <div>
             <Game/> 
-          </div>
     </AppContainer>
   );
 }
