@@ -2,6 +2,8 @@ import React from 'react';
 import Grid from './Grid'
 import Buttons from './Controls'
 
+
+
 import './game.css'
 
 
@@ -77,20 +79,20 @@ class Game extends React.Component {
     gridSize = (size) => {
         switch (size){
             case "1":
-                this.cols = 40;
-                this.rows = 25;
+                this.cols = 15;
+                this.rows = 15;
                 break;
             case "2":
-                this.cols = 50;
-                this.rows = 35;
+                this.cols = 25;
+                this.rows = 25;
                 break;
             case "3":
-                this.cols = 70;
-                this.rows = 50;
+                this.cols = 40;
+                this.rows = 30;
                 break;
             default:
-                this.cols = 75;
-                this.rows = 50
+                this.cols = 55;
+                this.rows = 40
         }
         this.clear();
     }
