@@ -2,24 +2,25 @@ import React from 'react';
 import Grid from './Grid'
 import Buttons from './Controls'
 
-
-
 import './game.css'
-
-
 
 class Game extends React.Component {
     constructor() {
         super();
+        //setting the default of speed, rows and cols when first opening page
+        //speed is set to 1 sec 
         this.speed = 100;
-        this.rows = 35;
-        this.cols = 50;
+        //row and cols are set to 10x10 
+        this.rows = 10;
+        this.cols = 10;
         this.state = {
             generation: 0,
             gridFull: Array(this.rows).fill().map(() => Array(this.cols).fill(false))
         }
     }
 
+    //when selecting box this happens
+    // selects box on row or col 
     selectBox = (row, col) => {
         let gridCop = arrayClone(this.state.gridFull);
         gridCop[row][col] = !gridCop[row][col];
@@ -27,6 +28,8 @@ class Game extends React.Component {
             gridFull: gridCop
         })
     }
+
+    //random boxes "cells" on grid 
     seed = () => {
         let gridCop = arrayClone(this.state.gridFull);
         for (let i = 0; i < this.rows; i++){
@@ -67,6 +70,7 @@ class Game extends React.Component {
         this.playButton();
     }
 
+    // resets/clears grid and generation count
     clear = () => {
         let grid = Array(this.rows).fill().map(() => Array(this.cols).fill(false));
         this.setState({
@@ -76,6 +80,7 @@ class Game extends React.Component {
         clearInterval(this.intervalId)
     }
 
+    // setting different grid size options
     gridSize = (size) => {
         switch (size){
             case "1":
@@ -97,6 +102,8 @@ class Game extends React.Component {
         this.clear();
     }
 
+    //without this play won't work. 
+    // this is setting for cells to start generating
     play = () => {
         let a = this.state.gridFull;
         let a2 = arrayClone(this.state.gridFull);
@@ -113,6 +120,7 @@ class Game extends React.Component {
                 if (i < this.rows - 1) if (a[i + 1][j]) count++;
                 if (i < this.rows - 1 && j > 0) if (a[i + 1][j - 1]) count++;
                 if (i < this.rows - 1 && j < this.cols - 1) if (a[i + 1][j + 1]) count++;
+                
                 if (a[i][j] && (count < 2 || count > 3)) a2[i][j] = false;
                 if (!a[i][j] && count === 3) a2[i][j] = true;
             }

@@ -15,8 +15,12 @@
 
 1. Start/Stop Button: start or stop the game simulation
 
-2. Next Button: advance to a new generation of cells ?
+2. Slow: Slows game to 4 sec.
 
-3. Clear Button: clear out the grid and set generation back to 0
+3. Fast: Speeds up game to 1 sec.
 
-4. Speed Slider: control speed from 0.1 to 3 seconds ?
+4. Clear Button: clear out the grid and set generation back to 0
+
+5. Seed: Fills grid with random cells "boxes"
+
+6. Size: Choice size for grid 15x15, 25x2, 40x30 and 55x40
