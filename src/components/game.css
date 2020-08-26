@@ -1,3 +1,7 @@
+/* body {
+  background-color: #282c34;
+} */
+
 .box {
     display: inline-block;       
     border: 1px solid rgb(255, 255, 255);
@@ -8,7 +12,7 @@
     }
   
   .off {
-    background-color: rgb(48, 47, 47);
+    background-color: #282c34;
   }
   
   .on {
@@ -26,6 +30,7 @@
   }
   
   .grid {
+    border: 1px solid black;
     width: 150px;
     line-height: 0;
     margin: auto;
