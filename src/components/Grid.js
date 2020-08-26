@@ -4,7 +4,8 @@ import Box from "../utils/useBox"
 
 class Grid extends React.Component{
     render() {
-        const width = (this.props.cols * 16)+1;
+        //width of grid not boxes
+        const width = (this.props.cols * 16);
         let rowArr = [];
 
         let boxClass = "";
@@ -13,6 +14,7 @@ class Grid extends React.Component{
             for (let j = 0; j < this.props.cols; j++){
                 let boxId = i + "_" + j;
 
+                // turning boxes from select to unselect
                 boxClass = this.props.gridFull[i][j] ? "box on" : "box off";
                 rowArr.push(
                     <Box

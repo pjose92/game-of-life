@@ -10,11 +10,12 @@ const AppContainer = styled.div`
 `
 
 const Title = styled.h1`
-  margin: 0 auto 1.5rem;
+  margin: 1.5rem auto;
   text-align: center;
   height: 5rem;
-  padding-top: 1.5rem;
+  padding-top: 2rem;
   color: black;
+  border: 1px solid black;
 `;
 
 
@@ -23,7 +24,7 @@ function App() {
     <AppContainer>
         <Title>The Game of Life</Title>
           <About />
-            <Game/> 
+          <Game/> 
     </AppContainer>
   );
 }

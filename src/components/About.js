@@ -1,11 +1,19 @@
 import React, {useState} from "react";
-import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
+import { Modal, ModalHeader, ModalBody } from "reactstrap";
 import styled from 'styled-components'
 
 const AboutDiv = styled.div`
     display: flex;
     justify-content: space-evenly;
     margin: 2rem;
+`
+
+const Button = styled.button`
+    background: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 8px;
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
 `
 
 const About = () => {

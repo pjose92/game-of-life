@@ -1,5 +1,6 @@
 import React from "react";
-import { Dropdown, DropdownButton } from "react-bootstrap";
+import { DropdownButton, Dropdown } from "react-bootstrap";
+import styled from "styled-components";
 
 // const ControlDiv = styled.div`
 // display: flex;
@@ -29,6 +30,26 @@ import { Dropdown, DropdownButton } from "react-bootstrap";
 //     handleNext,
 //   } = props;
 
+const Button = styled.button`
+  background: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 8px;
+  padding: 10px 20px 10px 20px;
+  cursor: pointer;
+  margin: 20px;
+`
+
+const Control = styled.div`
+  .dropDown {
+    background: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 8px;
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
+    margin: 20px;
+  }
+`
+
 class Buttons extends React.Component{
   handleSelect = (e) => {
     this.props.gridSize(e)
@@ -37,15 +58,17 @@ class Buttons extends React.Component{
   render() {
     return (
       <div className="center">
-          <button onClick={this.props.playButton}>Play</button>
-          <button onClick={this.props.pauseButton}>Pause</button>
-          <button onClick={this.props.slow}>Slow</button>
-          <button onClick={this.props.fast}>Fast</button>
-          <button onClick={this.props.clear}>Clear</button>
-          <button onClick={this.props.seed}>Seed</button>
-          <DropdownButton 
-            tittle="Size"
-            id="dropdown-basic-button"
+          <Button onClick={this.props.playButton}>Play</Button>
+          <Button onClick={this.props.pauseButton}>Pause</Button>
+          <Button onClick={this.props.slow}>Slow</Button>
+          <Button onClick={this.props.fast}>Fast</Button>
+          <Button onClick={this.props.clear}>Clear</Button>
+          <Button onClick={this.props.seed}>Seed</Button>
+          
+          <DropdownButton
+            className="dropDown"
+            title="Grid Size"
+            // id="dropdown-basic-button"
             onSelect={this.handleSelect}
           >
 
