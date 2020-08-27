@@ -122,6 +122,7 @@ class Game extends React.Component {
                 if (i < this.rows - 1 && j < this.cols - 1) if (a[i + 1][j + 1]) count++;
                 
                 if (a[i][j] && (count < 2 || count > 3)) a2[i][j] = false;
+                //if col or rows are not equal to 3 they will die
                 if (!a[i][j] && count === 3) a2[i][j] = true;
             }
         }

@@ -23,8 +23,8 @@ function App() {
   return (
     <AppContainer>
         <Title>The Game of Life</Title>
-          <About />
           <Game/> 
+          <About />
     </AppContainer>
   );
 }
